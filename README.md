@@ -1,5 +1,7 @@
 # overview
-This repo is for (1) cropping CFPs (we use code sampled from Automorph for this, credit to: https://github.com/rmaphoh/AutoMorph); (2) optionally flip right eye images if you want to create a dataset where right and left eye images have been converted to the same orientation (can simplify model training), (3) reduce size and convert to JPEG to reduce storage footprint. 
+This repo is for (1) cropping CFPs (we use code sampled from Automorph for this, credit to: https://github.com/rmaphoh/AutoMorph); (2) optionally flip right eye images if you want to create a dataset where right and left eye images have been converted to the same orientation (can simplify model training), (3) reduce size and convert to JPEG to reduce storage footprint (and you could reduce further than default by reducing image size or jpeg quality). 
+
+The code runs on CPU - there is no need for GPU to run any of the code here. The code is parallelised and will run substantially quicker in multi-CPU set ups. 
 
 # set up
 First , download this repo
