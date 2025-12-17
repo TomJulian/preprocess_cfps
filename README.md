@@ -18,18 +18,19 @@ The code discards all 1-channel images, as the expectation is all colour fundus 
 
 # flags
 there are several flags you can use to customise the pre-processing:
---source_dir; Directory containing images to process.
---out_dir; Directory to write processed images into.
---error_dir; Directory to write failure logs into (a txt file which tells you which images didnt process and approximately why)
---jpeg_quality; JPEG quality (0-100). Default 95. Anything over 95 is probably overkill and will waste storage. You might consider reducing this depending on storage constraints and use case.
---flip_RE; state either true/false. If true, flip right-eye images horizontally. This could simplify model training by reducing image diversity. 
---add_prefix; state either "true/false. If true, add prefix_str to output filenames.
---prefix_str; Prefix to add when --add_prefix true (e.g. 'FLIP_').
---LE_indicator; Substring indicating left eye in filenames (required if --flip_RE true).
---RE_indicator; Substring indicating right eye in filenames (required if --flip_RE true).
---image_resize; Resize output to NxN. Default 1024.I have made the default fairly high , if you know you are going to resize very small for all your models you might reduce it.
---chunksize"; this is used for parallelisation (which is required to run this quickly); how many images each parallel worker should be passed at once, i defaulted it to 250 assuming we are working with large numbers of images. Note I am not asking how many CPUs you want to use, i have defaulted this to your total CPUs minus 1 (if you're using 1 CPU it will default to 1 rather than trying to allocate 0). 
-
+```
+--source_dir # Directory containing images to process.
+--out_dir # Directory to write processed images into.
+--error_dir # Directory to write failure logs into (a txt file which tells you which images didnt process and approximately why)
+--jpeg_quality # JPEG quality (0-100). Default 95. Anything over 95 is probably overkill and will waste storage. You might consider reducing this depending on storage constraints and use case.
+--flip_RE # State either true/false. If true, flip right-eye images horizontally. This could simplify model training by reducing image diversity. 
+--add_prefix # State either "true/false. If true, add prefix_str to output filenames.
+--prefix_str # Prefix to add when --add_prefix true (e.g. 'FLIP_').
+--LE_indicator # Substring indicating left eye in filenames (required if --flip_RE true).
+--RE_indicator #  Substring indicating right eye in filenames (required if --flip_RE true).
+--image_resize # Resize output to NxN. Default 1024.I have made the default fairly high , if you know you are going to resize very small for all your models you might reduce it.
+--chunksize" # This is used for parallelisation (which is required to run this quickly); how many images each parallel worker should be passed at once, i defaulted it to 250 assuming we are working with large numbers of images. Note I am not asking how many CPUs you want to use, i have defaulted this to your total CPUs minus 1 (if you're using 1 CPU it will default to 1 rather than trying to allocate 0). 
+```
 # a example model run
 A run might look like: 
 ```
