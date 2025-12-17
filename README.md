@@ -17,7 +17,7 @@ The outputs should respect the directory structure of the original root (e.g. if
 The code discards all 1-channel images, as the expectation is all colour fundus photographs should be three channel . 
 
 # flags
-there are several flags you can use to customise the pre-processing:
+Rhere are several flags you can use to customise the pre-processing:
 ```
 --source_dir # Directory containing images to process.
 --out_dir # Directory to write processed images into.
